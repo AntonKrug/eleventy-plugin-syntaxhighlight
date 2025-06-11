@@ -49,6 +49,10 @@ module.exports = function (options = {}) {
     const preAttributes = getAttributes(options.preAttributes, context);
     const codeAttributes = getAttributes(options.codeAttributes, context);
 
+    for (let i=0; i<lines.length; i++) {
+      lines[i] = (i+1) + " " + lines[i];
+    }
+
     return `<pre${preAttributes}><code${codeAttributes}>${lines.join(options.lineSeparator || "<br>")}</code></pre>`;
   };
 };
