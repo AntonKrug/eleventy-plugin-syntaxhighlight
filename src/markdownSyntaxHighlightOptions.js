@@ -50,7 +50,7 @@ module.exports = function (options = {}) {
     const codeAttributes = getAttributes(options.codeAttributes, context);
 
     for (let i=0; i<lines.length; i++) {
-      lines[i] = (i+1) + " " + lines[i];
+      lines[i] = "<span style=\"color: #00000026\">" + (i+1) + "</span> " + lines[i];
     }
 
     return `<pre${preAttributes}><code${codeAttributes}>${lines.join(options.lineSeparator || "<br>")}</code></pre>`;
